@@ -13,33 +13,37 @@ NAVScan runs a staged pipeline:
 Current MVP data scope is **CEF-first** (ETF NAV sourcing is documented as limited in free sources).
 
 ## Quickstart (macOS M2)
-Prerequisites:
-- macOS Apple Silicon (M2)
-- `python3` (3.11+ recommended)
-- `curl`
-- `sqlite3`
+## Quickstart
 
-Run smoke demo (verified in Stage 6):
-```bash
-cd /Users/linruihe/Local\ Documents/Github/NAV\ Arbitrage\ Scanner
-PATH="$PWD/scripts:$PATH" navscan run --date 2026-02-20 --config configs/default.yaml --universe configs/universe_stage6_smoke.yaml --output-dir reports_stage6_smoke
-```
+Prereqs: Python 3.11+, curl, sqlite3
 
-Run full universe (slower, network-dependent):
-```bash
-PATH="$PWD/scripts:$PATH" navscan run --date 2026-02-20 --config configs/default.yaml --universe configs/universe_example.yaml --output-dir reports --verbose
-```
+# 1) clone & enter repo
+git clone https://github.com/H2nryHe/NAV-Arbitrage-Scanner.git
+cd NAV-Arbitrage-Scanner
 
-Run tests:
-```bash
-PYTHONPATH=. python3 -m unittest tests/test_formulas.py tests/test_half_life.py tests/test_pipeline_smoke.py
-```
+# 2) create venv
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -U pip
 
-Optional Stage 5 tracking update/query:
-```bash
-python3 scripts/stage5_track.py update --db data/warehouse/navscan_stage5.sqlite --signals-root data/gold/signals --silver-root data/silver --horizons 1,3,5 --verbose
-python3 scripts/stage5_track.py query --db data/warehouse/navscan_stage5.sqlite --scan-date 2026-02-19 --top-n 10 --as-of-date 2026-02-20
-```
+# 3) install deps (pick ONE)
+# Option A: if you have requirements.txt
+python -m pip install -r requirements.txt
+# Option B: minimal deps (if you don’t have requirements.txt yet)
+python -m pip install pandas numpy pyyaml requests python-dateutil
+
+# 4) run (use repo-relative PATH, not absolute path)
+export PATH="$PWD/scripts:$PATH"
+navscan run --date 2026-02-20 \
+  --config configs/default.yaml \
+  --universe configs/universe_stage6_smoke.yaml \
+  --output-dir reports_stage6_smoke
+
+# 5) unit tests
+PYTHONPATH=. python -m unittest \
+  tests/test_formulas.py \
+  tests/test_half_life.py \
+  tests/test_pipeline_smoke.py
 
 ## CLI Usage
 Primary command:
