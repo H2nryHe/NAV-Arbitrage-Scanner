@@ -1,5 +1,7 @@
 # NAV Arbitrage Scanner (NAVScan)
 
+![ci](https://github.com/H2nryHe/NAV-Arbitrage-Scanner/actions/workflows/ci.yml/badge.svg)
+
 Local CLI MVP for scanning CEF NAV premium/discount dislocations and producing daily candidate lists with risk notes.
 
 ## Overview
