@@ -1,0 +1,85 @@
+name: daily-navscan
+
+on:
+  schedule:
+    - cron: "15 14 * * 1-5"   # weekdays; adjust as you like (UTC)
+  workflow_dispatch:
+    inputs:
+      run_date:
+        description: "YYYY-MM-DD (optional). If empty, uses today (UTC)."
+        required: false
+        default: ""
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install -U pip
+          python -m pip install -r requirements.txt
+
+      - name: Run NAVScan
+        shell: bash
+        run: |
+          set -e
+          export PATH="$PWD/scripts:$PATH"
+
+          # Pick date
+          if [ -n "${{ github.event.inputs.run_date }}" ]; then
+            RUN_DATE="${{ github.event.inputs.run_date }}"
+          else
+            RUN_DATE="$(date -u +%F)"
+          fi
+
+          OUTDIR="reports_gh"
+          mkdir -p "${OUTDIR}"
+
+          set +e
+          navscan run --date "${RUN_DATE}" \
+            --config configs/default.yaml \
+            --universe configs/universe_stage6_smoke.yaml \
+            --output-dir "${OUTDIR}"
+          CODE=$?
+          set -e
+
+          echo "run_date=${RUN_DATE}" >> "$GITHUB_OUTPUT"
+          echo "exit_code=${CODE}" >> "$GITHUB_OUTPUT"
+
+          # Treat exit code 0 or 1 as success; only 2 fails (per README)
+          if [ "${CODE}" -eq 2 ]; then
+            echo "NAVScan failed with exit code 2"
+            exit 2
+          fi
+
+          # Write Actions summary (best-effort)
+          REPORT_MD="${OUTDIR}/date=${RUN_DATE}/daily_report.md"
+          echo "## NAVScan ${RUN_DATE}" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f "${REPORT_MD}" ]; then
+            echo "Daily report generated: \`${REPORT_MD}\`" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "### Preview (first 60 lines)" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            sed -n '1,60p' "${REPORT_MD}" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No daily_report.md found (pipeline may have produced no candidates)." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: navscan-reports
+          path: |
+            reports_gh/**
+          if-no-files-found: warn
