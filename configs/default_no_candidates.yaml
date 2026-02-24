@@ -1,0 +1,6 @@
+raw_root: data/raw
+silver_root: data/silver
+signals_root: data/gold/signals_no_candidates
+reports_root: reports_no_candidates
+stage3_signals_config: configs/stage3_signals_no_candidates.json
+top_n: 10

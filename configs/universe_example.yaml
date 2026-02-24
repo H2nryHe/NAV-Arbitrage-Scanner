@@ -1,0 +1,26 @@
+version: 1
+scope: CEF_ONLY_MVP
+notes:
+  - "Stage 0 result: CEF-first is feasible with free sources."
+  - "ETF NAV free-source quality is inconsistent across providers; ETFs are deferred for Stage 1-4."
+symbols:
+  - UTF # CEF
+  - PDI # CEF
+  - GOF # CEF
+  - EOS # CEF
+  - ETY # CEF
+  - ETV # CEF
+  - ETW # CEF
+  - EXG # CEF
+  - QQQX # CEF
+  - BXMX # CEF
+  - STK # CEF
+  - BOE # CEF
+  - BME # CEF
+  - BUI # CEF
+  - JRI # CEF
+  - RQI # CEF
+  - NIE # CEF
+  - CCD # CEF
+  - USA # CEF
+  - ASG # CEF

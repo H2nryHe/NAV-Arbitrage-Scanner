@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Runtime data / generated outputs
+data/raw/
+data/raw_smoke/
+data/silver/
+data/gold/
+data/warehouse/
+reports/
+reports_no_candidates/
+reports_stage6_smoke/
+
+# Keep examples and docs outputs (if you want)
+# examples/outputs/   <-- demo outputs

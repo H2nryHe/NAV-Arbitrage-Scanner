@@ -1,0 +1,14 @@
+{
+  "extreme": {"zscore_threshold": 99.0, "abs_pd_threshold": 999.0},
+  "liquidity": {"min_dollar_volume": 2000000.0, "reference_dollar_volume": 10000000.0},
+  "half_life": {"min_points": 20, "max_half_life_days": 252.0},
+  "event_filter": {"exclude_distribution_events": true, "event_data_status": "partial_unknown"},
+  "score": {
+    "weight_extreme": 0.6,
+    "weight_liquidity": 0.3,
+    "weight_half_life": 0.1,
+    "penalty_nav_stale": 0.2,
+    "penalty_half_life_unavailable": 0.1,
+    "penalty_event_data_partial": 0.05
+  }
+}

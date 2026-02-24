@@ -1,0 +1,7 @@
+raw_root: data/raw
+silver_root: data/silver
+signals_root: data/gold/signals
+reports_root: reports
+stage3_signals_config: configs/stage3_signals.json
+top_n: 10
+
