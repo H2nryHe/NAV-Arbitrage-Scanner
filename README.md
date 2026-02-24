@@ -17,32 +17,44 @@ Current MVP data scope is **CEF-first** (ETF NAV sourcing is documented as limit
 Prereqs: Python 3.11+, curl, sqlite3
 
 ### 1) clone & enter repo
+```bash
 git clone https://github.com/H2nryHe/NAV-Arbitrage-Scanner.git
 cd NAV-Arbitrage-Scanner
+```
 
 ### 2) create venv
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -U pip
+```
 
 ### 3) install deps (pick ONE)
 #### Option A: if you have requirements.txt
+```bash
 python -m pip install -r requirements.txt
-# Option B: minimal deps (if you don’t have requirements.txt yet)
+```
+#### Option B: minimal deps (if you don’t have requirements.txt yet)
+```bash
 python -m pip install pandas numpy pyyaml requests python-dateutil
+```
 
 ### 4) run (use repo-relative PATH, not absolute path)
+```bash
 export PATH="$PWD/scripts:$PATH"
 navscan run --date 2026-02-20 \
   --config configs/default.yaml \
   --universe configs/universe_stage6_smoke.yaml \
   --output-dir reports_stage6_smoke
+```
 
 ### 5) unit tests
+```bash
 PYTHONPATH=. python -m unittest \
   tests/test_formulas.py \
   tests/test_half_life.py \
   tests/test_pipeline_smoke.py
+```
 
 ## CLI Usage
 Primary command:
