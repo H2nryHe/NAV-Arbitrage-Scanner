@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NAV Arbitrage Scanner (NAVScan)</title>
+  <style>
+    body { font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif; margin: 40px; line-height: 1.5; }
+    h1 { margin: 0 0 8px; }
+    .sub { color:#555; margin:0 0 22px; }
+    .card { border:1px solid #ddd; border-radius:10px; padding:16px 18px; margin:14px 0; }
+    pre { background:#f7f7f7; padding:12px; border-radius:8px; overflow-x:auto; }
+    code { font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; }
+    .muted { color:#666; font-size:14px; }
+  </style>
+</head>
+<body>
+  <h1>NAV Arbitrage Scanner (NAVScan)</h1>
+  <p class="sub">Daily CEF NAV premium/discount relative-value scanner with staged pipeline, risk notes, and T+1/T+3/T+5 reversion tracking.</p>
+
+  <div class="card">
+    <h2>Quickstart</h2>
+    <pre><code>python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -U pip
+python -m pip install -r requirements.txt
+
+export PATH="$PWD/scripts:$PATH"
+navscan run --date 2026-02-20 \
+  --config configs/default.yaml \
+  --universe configs/universe_stage6_smoke.yaml \
+  --output-dir reports_stage6_smoke</code></pre>
+    <p class="muted">See examples under <code>examples/outputs/</code> (frozen demo outputs).</p>
+  </div>
+
+  <div class="card">
+    <h2>Outputs</h2>
+    <pre><code>reports/date=YYYY-MM-DD/top_opportunities.csv
+reports/date=YYYY-MM-DD/daily_report.md
+examples/outputs/top_opportunities_2026-02-20.csv
+examples/outputs/daily_report_2026-02-20.md
+examples/outputs/validation_summary_tplus.csv</code></pre>
+  </div>
+
+  <div class="card">
+    <h2>Why it’s “desk-style”</h2>
+    <ul>
+      <li>Staged pipeline (fetch → standardize → candidates → report → reversion tracking)</li>
+      <li>Risk flags + “insufficient history / event data partial” surfaced in report</li>
+      <li>Designed for daily run &amp; review (Action artifacts + summary)</li>
+    </ul>
+  </div>
+
+  <p class="muted">Enable GitHub Pages: Settings → Pages → Deploy from branch → main /docs</p>
+</body>
+</html>
