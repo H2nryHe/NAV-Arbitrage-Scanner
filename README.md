@@ -65,6 +65,20 @@ From demo date `2026-02-20`:
   - `examples/outputs/daily_report_2026-02-20.md`
   - `examples/outputs/validation_summary_tplus.csv`
 
+
+## Results snapshot (frozen example)
+
+From demo date `2026-02-20` (see `examples/outputs/`):
+
+- Top candidates: `examples/outputs/top_opportunities_2026-02-20.csv`
+- Daily report: `examples/outputs/daily_report_2026-02-20.md`
+- Reversion validation (T+1/T+3/T+5): `examples/outputs/validation_summary_tplus.csv`
+
+Interpretation:
+- This tool is **relative value**, not true “risk-free arbitrage”. It ranks **extreme discount dislocations** and flags NAV staleness / liquidity / basic risk notes.
+- Stage 5 tracking records forward discount moves to quantify reversion behavior and avoid “pretty backtests”.
+
+
 ## Data Source Limitations (MVP)
 - NAV timing/staleness: CEF NAV can lag price date; lag is flagged and called out in reports.
 - Event coverage: best-effort only; distribution/rebalance coverage is incomplete.
