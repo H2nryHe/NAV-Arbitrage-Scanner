@@ -1,0 +1,2 @@
+rank,date,symbol,asset_type,price_close,nav,premium_discount_pct,pd_zscore_20d,half_life_days,dollar_volume,score,rationale,risk_flags
+1,2026-02-20,UTF,CEF,26.87,28.93,-7.120636017974413,,,14022969.34,1.1251654023569295,extreme:abs_pd=7.1206% threshold=5.0%; liquidity:pass; half_life:insufficient_history,half_life_unavailable;insufficient_history_20d;event_data_partial

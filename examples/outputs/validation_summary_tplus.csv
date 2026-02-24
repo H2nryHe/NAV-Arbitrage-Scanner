@@ -1,0 +1,4 @@
+horizon_days,total_candidates,with_followup,reverted_count,reverted_rate_pct,missing_followup
+1,18,9,3,33.33,9
+3,18,0,0,,18
+5,18,0,0,,18

@@ -1,0 +1,21 @@
+symbol,asset_type,date,price_close,nav,volume,premium_discount_pct,has_price,has_nav,has_volume,has_all_three,cef_last_updated,nav_published,price_source,nav_source,volume_source
+UTF,CEF,2026-02-20,26.87,28.93,521882.0,-7.120636017974413,True,True,True,True,2026-02-20T00:00:00,2026-02-20T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+PDI,CEF,2026-02-20,18.63,16.65,1898673.0,11.891891891891904,True,True,True,True,2026-02-20T00:00:00,2026-02-19T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+GOF,CEF,2026-02-20,12.15,11.17,1955749.0,8.773500447627569,True,True,True,True,2026-02-20T00:00:00,2026-02-19T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+EOS,CEF,2026-02-20,21.99,23.39,76633.0,-5.985463873450203,True,True,True,True,2026-02-20T00:00:00,2026-02-19T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+ETY,CEF,2026-02-20,14.92,15.33,137861.0,-2.6744944553163785,True,True,True,True,2026-02-20T00:00:00,2026-02-19T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+ETV,CEF,2026-02-20,14.57,15.61,307516.0,-6.662395900064055,True,True,True,True,2026-02-20T00:00:00,2026-02-19T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+ETW,CEF,2026-02-20,9.44,10.41,436787.0,-9.317963496637848,True,True,True,True,2026-02-20T00:00:00,2026-02-19T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+EXG,CEF,2026-02-20,9.65,10.17,273996.0,-5.1130776794493515,True,True,True,True,2026-02-20T00:00:00,2026-02-19T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+QQQX,CEF,2026-02-20,27.73,30.69,80144.0,-9.64483545128707,True,True,True,True,2026-02-20T00:00:00,2026-02-20T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+BXMX,CEF,2026-02-20,14.71,16.34,117174.0,-9.975520195838428,True,True,True,True,2026-02-20T00:00:00,2026-02-20T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+STK,CEF,2026-02-20,40.02,41.72,37271.0,-4.074784276126553,True,True,True,True,2026-02-20T00:00:00,2026-02-20T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+BOE,CEF,2026-02-20,12.0,13.09,109997.0,-8.326967150496555,True,True,True,True,2026-02-20T00:00:00,2026-02-19T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+BME,CEF,2026-02-20,41.81,43.93,53740.0,-4.825859321648074,True,True,True,True,2026-02-20T00:00:00,2026-02-19T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+BUI,CEF,2026-02-20,29.37,27.38,43495.0,7.268078889700513,True,True,True,True,2026-02-20T00:00:00,2026-02-19T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+JRI,CEF,2026-02-20,13.13,14.2,214555.0,-7.535211267605623,True,True,True,True,2026-02-20T00:00:00,2026-02-20T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+RQI,CEF,2026-02-20,13.05,13.17,349782.0,-0.9111617312072884,True,True,True,True,2026-02-20T00:00:00,2026-02-20T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+NIE,CEF,2026-02-20,25.53,28.07,21858.0,-9.048806555040967,True,True,True,True,2026-02-20T00:00:00,2026-02-19T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+CCD,CEF,2026-02-20,23.09,22.12,89844.0,4.385171790235076,True,True,True,True,2026-02-20T00:00:00,2026-02-20T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+USA,CEF,2026-02-20,6.03,6.61,1220251.0,-8.774583963691374,True,True,True,True,2026-02-20T00:00:00,2026-02-19T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV
+ASG,CEF,2026-02-20,5.19,5.75,244373.0,-9.739130434782606,True,True,True,True,2026-02-20T00:00:00,2026-02-19T00:00:00,CEFConnect DailyPricing,CEFConnect DailyPricing,Stooq daily CSV

@@ -1,0 +1,9 @@
+{
+  "scan_date": "2026-02-19",
+  "as_of_date": "2026-02-20",
+  "top_n": 10,
+  "candidate_count": 9,
+  "reverted_count": 3,
+  "with_followup_count": 9,
+  "missing_followup_count": 0
+}

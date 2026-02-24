@@ -1,0 +1,11 @@
+{
+  "date": "2026-02-20",
+  "universe_size": 20,
+  "symbols_with_price": 20,
+  "symbols_with_nav": 20,
+  "symbols_with_volume": 20,
+  "symbols_with_all_three": 20,
+  "premium_discount_computable": 20,
+  "generated_at_utc": "2026-02-23T01:17:20Z",
+  "csv_path": "data/feasibility/coverage_2026-02-20.csv"
+}
