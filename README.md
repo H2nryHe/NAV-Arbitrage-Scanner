@@ -1,5 +1,12 @@
 # NAV Arbitrage Scanner (NAVScan)
 
+## Live docs (GitHub Pages)
+
+Enable Pages: Settings → Pages → Deploy from branch → `main` + `/docs`.
+Once enabled, your site will be:
+https://h2nryhe.github.io/NAV-Arbitrage-Scanner/
+
+
 ![ci](https://github.com/H2nryHe/NAV-Arbitrage-Scanner/actions/workflows/ci.yml/badge.svg)
 
 Local CLI MVP for scanning CEF NAV premium/discount dislocations and producing daily candidate lists with risk notes.
